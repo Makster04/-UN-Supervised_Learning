@@ -1,28 +1,26 @@
 # (UN)Supervised Learning Tree
 ```
-Data Science
+Machine Learning
 │
-└── Machine Learning
-    │
-    ├── Supervised Learning
-    │   ├── Regression
-    │   │   ├── Linear Regression
-    │   │   ├── Polynomial Regression
-    │   │   └── Ridge / Lasso
-    │   │
-    │   └── Classification
-    │       ├── Logistic Regression
-    │       └── Decision Trees
-    │
-    └── Unsupervised Learning
-        ├── Clustering
-        │   ├── k-means
-        │   ├── Hierarchical Clustering
-        │   └── DBSCAN
-        │
-        ├── Dimensionality Reduction
-        │   ├── PCA
-        │   └── t-SNE
-        │
-        └── Anomaly Detection
-            └── Isolation Forest
+├── Supervised Learning
+│   ├── Regression
+│   └── Classification
+│       ├── Logistic Regression
+│       ├── Decision Trees
+│       ├── Random Forest
+│       ├── SVM
+│       └── k-NN
+│
+├── Unsupervised Learning
+│   ├── Clustering
+│   ├── Dimensionality Reduction
+│   └── Anomaly Detection
+│
+├── Reinforcement Learning      ← missing entirely
+│   ├── Q-Learning
+│   └── Policy Gradient
+│
+└── Ensemble Methods            ← optional but common
+    ├── Bagging
+    └── Boosting (XGBoost)
+```
