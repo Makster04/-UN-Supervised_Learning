@@ -3,32 +3,41 @@
 
 ## Where It Fits
 ```
-Data Science
+Machine Learning
 │
-└── Machine Learning
-    │
-    ├── Supervised Learning
-    │   ├── Regression
-    │   │   ├── Linear Regression
-    │   │   ├── Polynomial Regression
-    │   │   └── Ridge / Lasso
-    │   │
-    │   └── Classification
-    │       ├── Logistic Regression
-    │       └── Decision Trees
-    │
-    └── Unsupervised Learning <--- YOU ARE HERE
-        ├── Clustering
-        │   ├── k-means
-        │   ├── Hierarchical Clustering
-        │   └── DBSCAN
-        │
-        ├── Dimensionality Reduction
-        │   ├── PCA
-        │   └── t-SNE
-        │
-        └── Anomaly Detection
-            └── Isolation Forest
+├── Supervised Learning 
+│   ├── Regression
+│   │   ├── Linear Regression
+│   │   ├── Polynomial Regression
+│   │   └── Ridge / Lasso
+│   │
+│   └── Classification
+│       ├── Logistic Regression
+│       ├── Decision Trees
+│       ├── Random Forest
+│       ├── SVM
+│       └── k-NN
+│
+├── Unsupervised Learning <---YOU ARE HERE
+│   ├── Clustering
+│   │   ├── k-means
+│   │   ├── Hierarchical Clustering
+│   │   └── DBSCAN
+│   │
+│   ├── Dimensionality Reduction
+│   │   ├── PCA
+│   │   └── t-SNE
+│   │
+│   └── Anomaly Detection
+│       └── Isolation Forest
+│
+├── Reinforcement Learning
+│   ├── Q-Learning
+│   └── Policy Gradient
+│
+└── Ensemble Methods
+    ├── Bagging (Random Forest)
+    └── Boosting (XGBoost, LightGBM)
 ```
 
 ---
