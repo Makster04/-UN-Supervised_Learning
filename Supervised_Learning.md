@@ -198,6 +198,82 @@ Following the tree above:
 
 ---
 
+### Random Forest
+> Builds many decision trees on random subsets of the data and features, then lets them vote on the final prediction.
+
+**When to use:** You want the interpretability of a decision tree but with much better accuracy and resistance to overfitting.
+
+**The core idea:** One tree is easy to fool. A hundred trees built on slightly different data, all voting together, are much harder to fool.
+
+**Example:** Using the same customer purchase data, instead of one tree:
+
+```
+Tree 1 (trained on customers A, B, C) → Predicts: Yes
+Tree 2 (trained on customers B, C, D) → Predicts: No
+Tree 3 (trained on customers A, C, D) → Predicts: Yes
+Tree 4 (trained on customers A, B, D) → Predicts: Yes
+
+Majority vote → Final Prediction: Yes (3 out of 4)
+```
+
+Each tree sees a different random slice of the data and a random subset of features. The disagreements between trees cancel out noise, and the majority wins.
+
+> **Key advantage over a single Decision Tree:** Much harder to overfit — a bad split in one tree gets outvoted by the rest.
+
+---
+
+### SVM (Support Vector Machine)
+> Finds the widest possible boundary (called a **hyperplane**) that separates two classes, maximizing the gap between them.
+
+**When to use:** You have a clear margin of separation between classes, or high-dimensional data (many features, like text classification).
+
+**Example:** Classifying emails as spam or not spam based on two features.
+
+```
+                  ● ● ●  (Spam)
+            - - - - - - - - -  ← margin
+           /    hyperplane    \
+            - - - - - - - - -  ← margin
+     ○ ○ ○  (Not Spam)
+```
+
+SVM doesn't just find *a* line that separates the classes — it finds the one with the **maximum margin** (widest gap) between the nearest points of each class. Those nearest points are called **support vectors**.
+
+| Feature       | Not Spam | Spam  |
+|---------------|----------|-------|
+| "Free" count  | 0–1      | 5–10  |
+| Link count    | 1–2      | 8–15  |
+
+> **Key concept:** The wider the margin, the more confident and generalizable the boundary. Points far from the boundary get classified easily; points near it are the tricky ones.
+
+---
+
+### k-NN (k-Nearest Neighbors)
+> Classifies a new point by looking at the k closest points in the training data and taking a majority vote.
+
+**When to use:** You have a small-to-medium dataset, want a simple baseline, or the decision boundary is complex and irregular.
+
+**Example:** Classifying a new customer as a buyer or non-buyer based on age and income.
+
+| Customer | Age | Income  | Bought? |
+|----------|-----|---------|---------|
+| A        | 35  | $70,000 | Yes     |
+| B        | 22  | $30,000 | No      |
+| C        | 40  | $65,000 | Yes     |
+| D        | 28  | $35,000 | No      |
+| **New**  | **37** | **$68,000** | **?** |
+
+With k=3, find the 3 nearest neighbors to the new customer:
+- Closest: Customer A (age 35, $70k) → Yes
+- 2nd closest: Customer C (age 40, $65k) → Yes
+- 3rd closest: Customer D (age 28, $35k) → No
+
+Majority vote (2 Yes, 1 No) → **Predict: Yes**
+
+> **Choosing k matters:** Small k (k=1) is sensitive to noise — one weird neighbor decides everything. Large k smooths the boundary but can blur real distinctions. A common starting point is k = √n where n is the number of training samples.
+
+---
+
 ### Regression vs. Classification — Key Differences
 
 | | Regression | Classification |
