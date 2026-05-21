@@ -1,5 +1,5 @@
 # SUPERVISED LEARNING
-# DS -> ML -> SL -> Regression in Data Science
+# DS -> ML -> SL -> Regression & Classification in Data Science
 
 ## Where It Fits
 ```
@@ -7,7 +7,7 @@ Data Science
 │
 └── Machine Learning
     │
-    ├── Supervised Learning <--- YOU ARE HERE
+    ├── Supervised Learning          ← YOU ARE HERE
     │   ├── Regression
     │   │   ├── Linear Regression
     │   │   ├── Polynomial Regression
@@ -111,6 +111,92 @@ Price = 50k + 148(Size) + 8.5k(Bedrooms) + 0(LotAge) + 0(ZipCode) + ...
 Ridge keeps all predictors but shrinks the noisy ones. Lasso is more aggressive — it performs automatic feature selection by eliminating them entirely.
 
 > **Rule of thumb:** If you suspect only a few predictors truly matter, use Lasso. If you think most predictors matter but are noisy, use Ridge.
+
+---
+
+## Classification Types
+
+> Unlike regression which predicts a *number*, classification predicts a *category* — yes/no, spam/not spam, cat/dog/bird.
+
+---
+
+### Logistic Regression
+> Despite the name, this is a classification algorithm. It predicts the *probability* that something belongs to a category, then draws a decision boundary.
+
+**When to use:** Your output is binary (yes/no, pass/fail, fraud/not fraud) and you want an interpretable model with probability scores.
+
+**Example:** Predicting whether a loan applicant will default.
+
+| Applicant | Income  | Debt Ratio | Defaulted? |
+|-----------|---------|------------|------------|
+| A         | $80,000 | 0.2        | No         |
+| B         | $30,000 | 0.8        | Yes        |
+| C         | $60,000 | 0.4        | No         |
+| D         | $25,000 | 0.9        | Yes        |
+
+The model outputs a probability between 0 and 1:
+
+```
+P(Default) = sigmoid(β₀ + β₁(Income) + β₂(DebtRatio))
+
+Applicant A → P(Default) = 0.08  → Predict: No
+Applicant B → P(Default) = 0.91  → Predict: Yes
+```
+
+You set a threshold (usually 0.5). Above it → Yes. Below it → No.
+
+> **Key difference from Linear Regression:** The output is always between 0 and 1 (a probability), never an unbounded number.
+
+---
+
+### Decision Trees
+> Splits data into branches using a series of yes/no questions, arriving at a prediction at each leaf node.
+
+**When to use:** You want a model that's easy to visualize and explain, handles both numeric and categorical features, and doesn't need much preprocessing.
+
+**Example:** Predicting whether someone buys a product.
+
+```
+                    Age > 30?
+                   /         \
+                 Yes           No
+                 /               \
+        Income > $50k?         → Predict: No
+           /       \
+         Yes        No
+          /           \
+  → Predict: Yes   → Predict: No
+```
+
+Each split asks the question that best separates the classes. The tree keeps splitting until it reaches a leaf — a final prediction.
+
+**Worked example with data:**
+
+| Customer | Age | Income  | Bought? |
+|----------|-----|---------|---------|
+| A        | 35  | $70,000 | Yes     |
+| B        | 22  | $30,000 | No      |
+| C        | 40  | $45,000 | No      |
+| D        | 45  | $90,000 | Yes     |
+
+Following the tree above:
+- Customer A: Age > 30 ✅, Income > $50k ✅ → **Yes**
+- Customer B: Age > 30 ❌ → **No**
+- Customer C: Age > 30 ✅, Income > $50k ❌ → **No**
+- Customer D: Age > 30 ✅, Income > $50k ✅ → **Yes**
+
+> **Watch out for:** Overfitting — a tree that's too deep memorizes the training data instead of learning general patterns. Pruning (limiting depth) keeps this in check.
+
+---
+
+### Regression vs. Classification — Key Differences
+
+| | Regression | Classification |
+|---|---|---|
+| **Predicts** | A number | A category |
+| **Output example** | $342,000 | Yes / No |
+| **Error metric** | MAE, RMSE, R² | Accuracy, Precision, Recall |
+| **Example algorithms** | Linear, Ridge, Lasso | Logistic Regression, Decision Trees |
 
 ---
 
