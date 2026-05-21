@@ -4,6 +4,10 @@ Machine Learning
 │
 ├── Supervised Learning
 │   ├── Regression
+│   │   ├── Linear Regression
+│   │   ├── Polynomial Regression
+│   │   └── Ridge / Lasso
+│   │
 │   └── Classification
 │       ├── Logistic Regression
 │       ├── Decision Trees
@@ -13,14 +17,22 @@ Machine Learning
 │
 ├── Unsupervised Learning
 │   ├── Clustering
+│   │   ├── k-means
+│   │   ├── Hierarchical Clustering
+│   │   └── DBSCAN
+│   │
 │   ├── Dimensionality Reduction
+│   │   ├── PCA
+│   │   └── t-SNE
+│   │
 │   └── Anomaly Detection
+│       └── Isolation Forest
 │
-├── Reinforcement Learning      ← missing entirely
+├── Reinforcement Learning
 │   ├── Q-Learning
 │   └── Policy Gradient
 │
-└── Ensemble Methods            ← optional but common
-    ├── Bagging
-    └── Boosting (XGBoost)
+└── Ensemble Methods
+    ├── Bagging (Random Forest)
+    └── Boosting (XGBoost, LightGBM)
 ```
