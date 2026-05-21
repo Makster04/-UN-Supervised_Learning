@@ -4,7 +4,7 @@ Data Science
 │
 └── Machine Learning
     │
-    ├── Supervised Learning          ← YOU ARE HERE
+    ├── Supervised Learning
     │   ├── Regression
     │   │   ├── Linear Regression
     │   │   ├── Polynomial Regression
