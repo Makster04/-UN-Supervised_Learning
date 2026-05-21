@@ -9,17 +9,22 @@ Data Science
     │
     ├── Supervised Learning
     │   ├── Regression
+    │   │   ├── Linear Regression
+    │   │   ├── Polynomial Regression
+    │   │   └── Ridge / Lasso
+    │   │
     │   └── Classification
+    │       ├── Logistic Regression
+    │       └── Decision Trees
     │
-    └── Unsupervised Learning        ← YOU ARE HERE
-        │
+    └── Unsupervised Learning <--- YOU ARE HERE
         ├── Clustering
         │   ├── k-means
         │   ├── Hierarchical Clustering
         │   └── DBSCAN
         │
         ├── Dimensionality Reduction
-        │   ├── PCA                  ← start here
+        │   ├── PCA
         │   └── t-SNE
         │
         └── Anomaly Detection
