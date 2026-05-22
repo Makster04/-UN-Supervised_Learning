@@ -158,6 +158,7 @@ Applicant B → P(Default) = 0.91  → Predict: Yes
 You set a threshold (usually 0.5). Above it → Yes. Below it → No.
 
 > **Key difference from Linear Regression:** The output is always between 0 and 1 (a probability), never an unbounded number.
+<img width="814" height="999" alt="image" src="https://github.com/user-attachments/assets/933b5e7a-49b4-416c-bf0b-844838ade71b" />
 
 ---
 
