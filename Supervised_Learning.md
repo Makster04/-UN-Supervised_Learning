@@ -65,9 +65,9 @@ Price = 50,000 + (200 × Size)
 ```
 
 Each additional sqft adds a flat $200. The relationship is constant across all sizes — that's the "linear" part.
+<img width="1153" height="492" alt="image" src="https://github.com/user-attachments/assets/4b293911-21d4-44df-877b-5ecd7c95529f" />
 
 ---
-<img width="1153" height="492" alt="image" src="https://github.com/user-attachments/assets/4b293911-21d4-44df-877b-5ecd7c95529f" />
 
 ### Polynomial Regression
 > Fits a curve instead of a straight line. Adds powers of X (X², X³, etc.) to capture non-linear patterns.
@@ -85,6 +85,7 @@ Each additional sqft adds a flat $200. The relationship is constant across all s
 | 100         | 14   |
 
 Fuel efficiency peaks around 40–50 mph, then drops. A straight line can't capture this. A polynomial model can:
+<img width="1123" height="481" alt="image" src="https://github.com/user-attachments/assets/10b4db6a-0c8e-4f00-9c54-37084bfbb482" />
 
 ```
 MPG = β₀ + β₁(Speed) + β₂(Speed²)
