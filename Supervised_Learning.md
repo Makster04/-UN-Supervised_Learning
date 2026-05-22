@@ -67,6 +67,7 @@ Price = 50,000 + (200 × Size)
 Each additional sqft adds a flat $200. The relationship is constant across all sizes — that's the "linear" part.
 
 ---
+<img width="1153" height="492" alt="image" src="https://github.com/user-attachments/assets/4b293911-21d4-44df-877b-5ecd7c95529f" />
 
 ### Polynomial Regression
 > Fits a curve instead of a straight line. Adds powers of X (X², X³, etc.) to capture non-linear patterns.
