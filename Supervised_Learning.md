@@ -66,7 +66,7 @@ Price = 50,000 + (200 × Size)
 
 Each additional sqft adds a flat $200. The relationship is constant across all sizes — that's the "linear" part.
 <img width="1153" height="492" alt="image" src="https://github.com/user-attachments/assets/4b293911-21d4-44df-877b-5ecd7c95529f" />
-
+Linear Regression — The data points lie in a perfect line and the fitted (orange) line runs straight through them. The relationship is constant: each sqft adds the same dollar amount regardless of house size.
 ---
 
 ### Polynomial Regression
@@ -85,13 +85,13 @@ Each additional sqft adds a flat $200. The relationship is constant across all s
 | 100         | 14   |
 
 Fuel efficiency peaks around 40–50 mph, then drops. A straight line can't capture this. A polynomial model can:
-<img width="1123" height="481" alt="image" src="https://github.com/user-attachments/assets/10b4db6a-0c8e-4f00-9c54-37084bfbb482" />
 
 ```
 MPG = β₀ + β₁(Speed) + β₂(Speed²)
 ```
 
 The Speed² term lets the curve bend. Higher-degree terms (³, ⁴) bend more, but risk overfitting.
+<img width="1123" height="481" alt="image" src="https://github.com/user-attachments/assets/10b4db6a-0c8e-4f00-9c54-37084bfbb482" />
 
 ---
 
@@ -122,6 +122,7 @@ Price = 50k + 148(Size) + 8.5k(Bedrooms) + 0(LotAge) + 0(ZipCode) + ...
 Ridge keeps all predictors but shrinks the noisy ones. Lasso is more aggressive — it performs automatic feature selection by eliminating them entirely.
 
 > **Rule of thumb:** If you suspect only a few predictors truly matter, use Lasso. If you think most predictors matter but are noisy, use Ridge.
+<img width="1119" height="511" alt="image" src="https://github.com/user-attachments/assets/fe488a59-a980-4275-a0be-7fe126af67de" />
 
 ---
 
